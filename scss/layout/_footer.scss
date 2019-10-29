@@ -1,0 +1,10 @@
+
+footer {
+	height: $footer-height;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $color-bg-footer;
+	font-size: 0.8rem;
+	color: $color-white;
+}

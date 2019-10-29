@@ -1,0 +1,23 @@
+
+.about-content {
+	display: flex;
+	flex-direction: column;
+
+	@media all and (min-width: $breakpoint-lg) {
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	p {
+		color: $color-white;
+		font-size: 1.25rem;
+		font-weight: 300;
+		margin-bottom: 1rem;
+		line-height: 30px;
+		padding: 0 15px;
+
+		@media all and (min-width: $breakpoint-lg) {
+			width: calc(100%  / 3);
+		}
+	}
+}

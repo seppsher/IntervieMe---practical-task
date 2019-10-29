@@ -1,0 +1,71 @@
+
+form {
+	width: 100%;
+	@media all and (min-width: $breakpoint-lg) {
+		max-width: calc((100%  / 3) * 2);
+	}
+}
+
+.input-wrapper {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 100%;
+	border-bottom: 1px solid $ipnut-border-color;
+	padding-bottom: 0.5rem;
+
+	&.show-label {
+		label {
+			color: $color-black;
+			opacity: 1;
+			top: 2px;
+		}
+
+		li {
+			display: none;
+		}
+	}
+
+	input, textarea {
+		height: 52px;
+		font-size: 1.5em;
+		border: 0;
+		padding: 6px 0;
+		color: $ipnut-color;
+		z-index: 1;
+		margin-top: 20px;
+
+		&:focus {
+			outline: none;
+
+			~ label {
+				color: $color-secondary;
+			}
+		}
+	}
+
+	textarea {
+		height: 190px;
+		font-family: inherit;
+		resize: none;
+	}
+
+	label {
+		font-size: 0.85em;
+		transition: top .3s ease, opacity .3s ease;
+		opacity: 0;
+		z-index: 0;
+		top: 30px;
+		position: absolute;
+	}
+
+	ul {
+		list-style-type: disc;
+		margin-left: 2.5rem;
+		margin-bottom: 1rem;
+	}
+	
+	li {
+		color: $ipnut-validation-color;
+	}
+}

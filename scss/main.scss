@@ -1,0 +1,84 @@
+
+@import "_reset.scss";
+@import "_variables.scss";
+@import "_icons.scss";
+@import "_helpers.scss";
+@import "_buttons.scss";
+@import "components/_iconSeparator.scss";
+@import "components/_modal.scss";
+@import "components/_portfolioList.scss";
+@import "components/_scroller.scss";
+@import "layout/_header.scss";
+@import "layout/_footer.scss";
+@import "layout/_form.scss";
+@import "layout/_aboutSection.scss";
+@import "layout/_startSection.scss";
+@import "layout/_summarySection.scss";
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	color: $color-black;
+	text-decoration: none;
+}
+
+body {
+	background-color: $color-white;
+	color: $text-color;
+	line-height: 1.5;
+	font-family: "Lato", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 'Noto Color Emoji';
+
+	&.is-modal-open {
+		overflow: hidden;
+	}
+}
+
+.main-wrapper {
+	margin-top: $header-height-mobile;
+}
+
+section {
+	width: 100%;
+	padding: 6rem 0;
+    display: flex;
+    flex-direction: column;
+	align-items: center;
+}
+	
+h2 {
+	text-transform: uppercase;
+	font-size: 2.25rem;
+	line-height: 2rem;
+	font-weight: 700;
+
+	@media all and (min-width: $breakpoint-lg) {
+		font-size: 3rem;
+		line-height: 2.5rem;
+	}
+}
+
+.responsive-wrapper {
+	width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+	margin-left: auto;
+	
+	@media all and (min-width: $breakpoint-mobile) {
+		max-width: 540px;
+	}
+
+	@media all and (min-width: $breakpoint-sm) {
+		max-width: 720px;
+	}
+
+	@media all and (min-width: $breakpoint-lg) {
+		max-width: 960px;
+	}
+
+	@media all and (min-width: $breakpoint-xl) {
+		max-width: 1140px;
+	}
+}

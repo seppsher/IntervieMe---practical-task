@@ -1,0 +1,126 @@
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-primary;
+    height: $header-height-mobile;
+    z-index: 100;
+    transition: height 0.3s;
+    padding: 0 1rem;
+
+	@media all and (min-width: $breakpoint-lg) {
+        height: $header-height-desktop;
+
+        &.is-smaller {
+            height: $header-height-desktop-smaller;
+        }
+	}
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    height: 100%;
+
+    &.responsive-wrapper {
+        padding: 0;
+
+        @media all and (min-width: $breakpoint-lg) {
+            padding: 0 15px;
+        }
+    }
+
+    &.is-expanded ul {
+        max-height: 200px;;
+    }
+
+    .navigation__title {
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.25rem;
+        white-space: nowrap;
+        cursor: pointer;
+        user-select: none;
+        transition: font-size 0.3s;
+
+        @media all and (min-width: $breakpoint-lg) {
+            font-size: 1.75rem;
+
+            .is-smaller & {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-color: $color-primary;
+        left: 0;
+        right: 0;
+        top: $header-height-mobile;;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+
+        @media all and (min-width: $breakpoint-lg) {
+            position: static;
+            flex-direction: row;
+            top: 0;
+            overflow: visible;
+            max-height: none;
+        }
+
+        li {
+            text-transform: uppercase;
+            list-style: none;
+            color: $color-white;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: $border-radius-normal;
+            margin: 0 0.25rem;
+
+            &:hover {
+                color: $color-secondary;
+            }
+
+            &.is-active {
+                color: $color-secondary;
+
+                @media all and (min-width: $breakpoint-lg) {
+                    background-color: $color-secondary;
+                    color: $color-white;
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 1rem;
+
+                @media all and (min-width: $breakpoint-lg) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    button {
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        padding: 0.6rem 0.8rem;
+        font-weight: 700;
+
+        @media all and (min-width: $breakpoint-lg) {
+            display: none;
+        }
+
+        .icon {
+            margin: 0 0 0 2px;
+            font-size: 0.8rem;
+        }
+    }
+}

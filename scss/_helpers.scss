@@ -1,0 +1,72 @@
+
+@import "_mixins.scss";
+
+.color-primary {
+    color: $color-primary;
+}
+
+.bg-color-primary {
+    background-color: $color-primary;
+}
+
+.color-secondary {
+    color: $color-secondary;
+}
+
+.bg-color-secondary {
+    background-color: $color-secondary;
+}
+
+.color-white {
+    color: $color-white;
+}
+
+.bg-color-white {
+    background-color: $color-white;
+}
+
+@for $i from 0 through 3 {
+    .mt-#{$i} {
+        margin-top: $i * 1rem !important;
+    }
+
+    .mr-#{$i} {
+        margin-right: $i * 1rem !important;
+    }
+
+    .mb-#{$i} {
+        margin-bottom: $i * 1rem !important;
+    }
+
+    .ml-#{$i} {
+        margin-left: $i * 1rem !important;
+    }
+
+    .pt-#{$i} {
+        padding-top: $i * 1rem !important;
+    }
+
+    .pr-#{$i} {
+        padding-right: $i * 1rem !important;
+    }
+
+    .pb-#{$i} {
+        padding-bottom: $i * 1rem !important;
+    }
+
+    .pl-#{$i} {
+        padding-left: $i * 1rem !important;
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: row !important;
+    @include directions-mixin();
+}
+
+.col {
+    display: flex;
+    flex-direction: column !important;
+    @include directions-mixin();
+}

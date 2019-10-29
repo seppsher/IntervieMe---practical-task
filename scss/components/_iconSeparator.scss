@@ -1,0 +1,36 @@
+
+.icon-separator {
+    position: relative;
+    margin: 1.25rem 0 1.5rem;
+
+    &.primary-version {
+        color: $color-primary;
+        
+        &:before, &:after {
+            background-color: $color-primary;
+        }
+    }
+
+    &.secondary-version {
+        color: $color-white;
+        
+        &:before, &:after {
+            background-color: $color-white;
+        }
+    }
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        width: 7rem;
+        height: 0.25rem;
+    }
+
+    &:before {
+        left: -8rem;
+    }
+
+    &:after {
+        right: -8rem;
+    }
+}
